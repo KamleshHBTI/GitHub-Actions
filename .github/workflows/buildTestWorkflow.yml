@@ -14,11 +14,8 @@ jobs:
         swift: ["5.0", "5.3"]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: swift-actions/setup-swift@v1
-        with:
-          swift-version: ${{ matrix.swift }}
       - uses: actions/checkout@v4
       - name: Build
         run: swift build
       - name: Run tests
-        run: swift test
+        run:  xcodebuild test -project GithubActions.xcodeproj -scheme GithubActions -destination 'platform=iOS Simulator,name=iPhone 11,OS=14.3' build test
