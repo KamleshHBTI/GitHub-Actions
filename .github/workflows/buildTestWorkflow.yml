@@ -21,4 +21,4 @@ jobs:
           echo $default | cat >default
           echo Using default scheme: $default
       - name: Run tests
-        run: xcodebuild test -scheme GithubActions -project GithubActions.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 15,OS=17.0' | xcpretty && exit ${PIPESTATUS[0]}
+        run: xcodebuild test -scheme GithubActions -project GithubActions.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2' | xcpretty && exit ${PIPESTATUS[0]}
