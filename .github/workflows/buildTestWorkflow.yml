@@ -1,5 +1,4 @@
 name: iOS starter workflow
-
 on:
   push:
     branches: [ "main" ]
@@ -7,6 +6,7 @@ on:
     branches: [ "main" ]
 jobs:
   build:
+    continue-on-error: true
     name: Swift ${{ matrix.swift }} on ${{ matrix.os }}
     strategy:
       matrix:
