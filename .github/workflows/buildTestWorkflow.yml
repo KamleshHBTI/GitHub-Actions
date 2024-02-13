@@ -14,5 +14,7 @@ jobs:
         swift: ["5.0"]
     runs-on: ${{ matrix.os }}
     steps:
+      - name: Test
+        uses: actions/checkout@v3
       - name: Run tests
         run:  xcodebuild test -project GithubActions.xcodeproj -scheme GithubActions -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.2' build test
